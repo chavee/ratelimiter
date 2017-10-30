@@ -4,12 +4,6 @@ var util = require('util'),
     path = require('path'),
     luaScript = fs.readFileSync(path.join(__dirname, './lua/rollingLimit.lua'), 'utf8');
 
-var errormsg = {
-    "000" : "OK",
-    "400" : "Rate limit exceeded",
-    "500" : "Illegal backdate update",
-}
-
 function RollingLimit(options) {
     if (typeof options !== 'object' || options === null) {
         throw new TypeError('options must be an object');
@@ -36,7 +30,6 @@ function RollingLimit(options) {
     });
 }
 
-//RollingLimit.prototype.use = function(id, amt, cb) {
 RollingLimit.prototype.use = function(id, opt, callback) {
     var amount = 1;
     var nowMS = Date.now();
@@ -71,7 +64,7 @@ RollingLimit.prototype.use = function(id, opt, callback) {
                 });
                 reject(err);
                 if (callback) {
-                    callback(err, 0);
+                    callback(500, 0, 0);
                 }
                 return;
             }
@@ -81,7 +74,7 @@ RollingLimit.prototype.use = function(id, opt, callback) {
             });
             resolve(res);
             if (callback) {
-                callback(null, res);
+                callback(res[0]||0, res[1]||0, res[2]||0);
             }
             return;
         });
