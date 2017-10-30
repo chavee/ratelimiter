@@ -8,7 +8,7 @@ A rolling rate limit using Redis forked from https://github.com/fastest963/node-
 var RateLimiter = require('ratelimiter');
 ```
 
-## RollingLimit Methods ##
+## RateLimiter Methods ##
 
 ### limiter = new RateLimiter(options) ###
 
