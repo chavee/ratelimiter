@@ -2,7 +2,7 @@ var util = require('util'),
     fs = require('fs'),
     log = require('levenlabs-log'),
     path = require('path'),
-    luaScript = fs.readFileSync(path.join(__dirname, './lua/rollingLimit.lua'), 'utf8');
+    luaScript = fs.readFileSync(path.join(__dirname, './lua/rollinglimit.lua'), 'utf8');
 
 function RollingLimit(options) {
     if (typeof options !== 'object' || options === null) {
@@ -74,7 +74,7 @@ RollingLimit.prototype.use = function(id, opt, callback) {
             });
             resolve(res);
             if (callback) {
-                callback(res[0]||0, res[1]||0, res[2]||0);
+                callback(res[0]||0, res[1]||0, res[]);
             }
             return;
         });
