@@ -1,0 +1,33 @@
+{
+  "name": "ratelimiter",
+  "version": "0.1.0",
+  "description": "Rolling rate limit in redis via a lua script based on node-redis-rolling-limit",
+  "main": "rollingLimit.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "levenlabs-log": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1",
+    "ioredis": "^3.1.4",
+    "sha1": "^1.1.1"
+  },
+  "scripts": {
+    "test": "nodeunit tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chavee/ratelimiter.git"
+  },
+  "keywords": [
+    "node",
+    "redis",
+    "rate",
+    "limit",
+  ],
+  "author": "",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
