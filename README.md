@@ -1,6 +1,6 @@
-# redis-rolling-limit #
+# ratelimiter #
 
-A rolling rate limit using Redis based on https://github.com/fastest963/node-redis-rolling-limit. 
+A rolling rate limit using Redis forked from https://github.com/fastest963/node-redis-rolling-limit. 
 
 ### Usage ###
 
