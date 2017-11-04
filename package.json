@@ -10,12 +10,18 @@
     "levenlabs-log": "^0.1.1"
   },
   "devDependencies": {
-    "nodeunit": "^0.9.1",
+    "async": "^2.5.0",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "hat": "0.0.3",
     "ioredis": "^3.1.4",
-    "sha1": "^1.1.1"
+    "mocha": "^4.0.1",
+    "nodeunit": "^0.9.1",
+    "sha1": "^1.1.1",
+    "sinon": "^4.0.2"
   },
   "scripts": {
-    "test": "nodeunit tests"
+    "test": "mocha spec --require spec/helpers/chai.js --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -25,7 +31,7 @@
     "node",
     "redis",
     "rate",
-    "limit",
+    "limit"
   ],
   "author": "",
   "license": "MIT",
