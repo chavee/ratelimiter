@@ -23,9 +23,14 @@ local num = redis.call('ZCARD', key)
 local numleft = limit - num - amount
 if numleft <= 0 then
     minrts = redis.call('ZRANGE', key, 0, 0, "WITHSCORES")
-    timeToWait = minrts[2]-timeMS+intervalMS
+    if minrts[2] then
+        timeToWait = minrts[2]-timeMS+intervalMS
+    else
+        timeToWait = intervalMS
+    end
+
     if numleft < 0 then
-        return {429,0,timeToWait}
+        return {429,numleft+amount,timeToWait}
     end
 end
 
