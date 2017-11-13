@@ -13,6 +13,7 @@
     "async": "^2.5.0",
     "chai": "^4.1.2",
     "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
     "hat": "0.0.3",
     "ioredis": "^3.1.4",
     "mocha": "^4.0.1",
@@ -21,7 +22,7 @@
     "sinon": "^4.0.2"
   },
   "scripts": {
-    "test": "mocha spec --require spec/helpers/chai.js --reporter spec"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
