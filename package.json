@@ -1,10 +1,9 @@
 {
   "name": "ratelimiter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Rolling rate limit in redis via a lua script based on node-redis-rolling-limit",
-  "main": "rollingLimit.js",
+  "main": "lib/index.js",
   "directories": {
-    "test": "tests"
   },
   "dependencies": {
     "levenlabs-log": "^0.1.1"
@@ -32,7 +31,8 @@
     "node",
     "redis",
     "rate",
-    "limit"
+    "limit",
+    "lua"
   ],
   "author": "",
   "license": "MIT",
